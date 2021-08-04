@@ -51,7 +51,7 @@ task buildFrontend(type: Exec) {
 task copyFrontend(type: Sync) {
 	dependsOn("buildFrontend")
 	from(file("./frontend/build"))
-	into(file("$buildDir/resources/main"))
+	into(file("./src/main/resources/static"))
 	doLast {
 		println("copied built frontend to static resources")
 	}
