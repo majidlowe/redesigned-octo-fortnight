@@ -2,7 +2,46 @@
 
 In SpringBoot Web App, we are going to implement a day at a virtual car dealership.  The dealership has one salesperson and as many cars as you feel like.  Throughout the day, the salesperson has 5 consecutive appointments to show (and hopefully sell) the cars.
 
-### User Stories
+### Development setup
+1. [Install Docker](https://docs.docker.com/get-docker/)
+1. Install `node`
+    ```shell script
+    brew install node
+    ```
+1. Install `yarn`
+    ```shell script
+    npm install --global yarn
+    ```
+1. Install `java11`
+    ```shell script
+    brew update
+    brew install openjdk@11
+
+1. Run the following  command from the project root directory
+   ```shell script
+   docker-compose up -d
+   ```
+
+## Running the App Locally
+### Start backend server
+```shell script
+./gradlew bootRun
+```
+
+### Start frontend development server
+For hot reloading of the frontend, run the following command from the `frontend` directory:
+```shell script
+yarn start
+```
+
+## Running Tests
+| Tests to Run       | Command(s)           |
+| :----------------- |:---------------------|
+| Backend | Run `./gradlew test` in the project root directory |
+| Frontend | Run `yarn test` in the `frontend` directory |
+| Journey | __Headless:__ Run `yarn test` from the `journey` directory. <br>__In browser:__ Run `yarn open` from the `journey` directory  |
+
+# User Stories
 1. **Show the Cars**
 
    When a potential customer visits the site, cars for sale should be displayed on the page.  Show the car's make, model, and price. That should look something like this:
@@ -25,7 +64,7 @@ In SpringBoot Web App, we are going to implement a day at a virtual car dealersh
 
 1. **A Customer Can Opt to Not Purchase**
 
-   When a customer does not confirm the purchase of a car, 
+   When a customer does not confirm the purchase of a car,
    no commission is earned and that the available car inventory does not change.<br/><br/>
 
 1. **The Site Alerts Customers When Out of Cars**
@@ -59,6 +98,3 @@ In SpringBoot Web App, we are going to implement a day at a virtual car dealersh
 1. **The Salesperson should have to login to view their commission**
 
    Protect the salesperson profile with a login prompt.<br/><br/>
-
-   
-   
