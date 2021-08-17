@@ -7,5 +7,5 @@ CREATE TABLE if not exists CARS(
 
 INSERT INTO CARS (make, model, price)
 VALUES ('Chevy', 'Volt', 4000.00),
-       ('Honda', 'Odyssey', 350.00),
+       ('Honda', 'Odyssey', 10000.00),
        ('Porsche', '911', 20000.00);
